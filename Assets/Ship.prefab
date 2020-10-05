@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2581006016348127288}
   - component: {fileID: 2581006016348127290}
   - component: {fileID: 2581006016348127291}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ship
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5106c2aa13a85e840a8fe4f57d9738c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spd: 4
-  planet: {fileID: 0}
+  spd: 7
+  damage: 1
+  planet: {fileID: 8967283218999663008, guid: 81d6868d145298640b12adf14b26943d, type: 3}
 --- !u!61 &2581006016348127290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2581006017041928439}
   - component: {fileID: 2581006017041928424}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

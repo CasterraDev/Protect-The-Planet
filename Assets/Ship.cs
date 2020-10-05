@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     public float spd;
+    public int damage = 1;
     public Transform planet;
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class Ship : MonoBehaviour
         }
         else if (collision.CompareTag("Planet"))
         {
+            collision.GetComponent<Health>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }
