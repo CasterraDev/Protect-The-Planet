@@ -5,6 +5,7 @@ using UnityEngine;
 public class Board : MonoBehaviour
 {
     public float spd = 3f;
+    public float bulletSpd = 5f;
     public float shooterCoolDown = 1f;
     public Transform target;
     public GameObject bullet;
@@ -28,14 +29,12 @@ public class Board : MonoBehaviour
 
         transform.RotateAround(target.position, zAxis, spd * -h * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (timer < Time.time)
-            {
-                Debug.Log(origin.transform.position);
-                Instantiate(bullet, new Vector3(origin.transform.position.x - 5,origin.transform.position.y), origin.transform.rotation);
-                timer = Time.time + shooterCoolDown;
-            }
+            Debug.Log(origin.transform.position);
+            var shot = Instantiate(bullet, origin.transform.position, origin.transform.rotation);
+            shot.GetComponent<Bullet>().spd = bulletSpd;
+            timer = Time.time + shooterCoolDown;
         }
     }
 }

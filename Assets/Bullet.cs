@@ -15,5 +15,6 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(-spd * Time.deltaTime, 0, 0),Space.Self);
+        Destroy(gameObject, 1000 * Time.deltaTime);
     }
 }
